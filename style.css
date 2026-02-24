@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #e5e7eb;
+    color: #1f2937;
+    padding: 30px 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: #111827;
+    letter-spacing: 0.5px;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.container {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.container h2 {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    color: #111827;
+}
+
+#markdown-input {
+    width: 100%;
+    min-height: 150px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    font-size: 1rem;
+    background: #f9fafb;
+    resize: vertical;
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+#markdown-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+#html-output,
+#preview {
+    width: 100%;
+    min-height: 150px;
+    padding: 15px;
+    border-radius: 10px;
+    background: #f3f4f6;
+    border: 1px solid #d1d5db;
+    font-family: monospace;
+    font-size: 0.95rem;
+    white-space: pre-wrap;
+    overflow-y: auto;
+    transition: box-shadow 0.3s ease;
+}
+
+#html-output:hover,
+#preview:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#html-output::-webkit-scrollbar,
+#preview::-webkit-scrollbar {
+    width: 8px;
+}
+
+#html-output::-webkit-scrollbar-thumb,
+#preview::-webkit-scrollbar-thumb {
+    background-color: rgba(156, 163, 175, 0.6);
+    border-radius: 4px;
+}
+
+#html-output::-webkit-scrollbar-track,
+#preview::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+@media (min-width: 768px) {
+    #container {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    .container {
+        flex: 1;
+        max-width: 32%;
+    }
+}
